@@ -36,6 +36,8 @@ jobs:
         shell: bash
         run: |
           mkdir ./bin
+          chmod +x ./docker-utils/ffmpeg-fetch.sh
+          chmod +x ./docker-utils/fetch-twitchdownloader.sh
           ./docker-utils/ffmpeg-fetch.sh
           ./docker-utils/fetch-twitchdownloader.sh
 

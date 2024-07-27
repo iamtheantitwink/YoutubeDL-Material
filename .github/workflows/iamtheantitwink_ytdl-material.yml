@@ -31,26 +31,26 @@ jobs:
       - name: build frontend
         run: |
           cd $GITHUB_WORKSPACE \
-          && mkdir /build \
-          && cp ./src /build/src \
-          && cd /build/src \
+          && mkdir ./build \
+          && cp ./src ./build/src \
+          && cd ./build/src \
           && npm run build --if-present \
           && npm install --prod
 
       - name: build backend
         run: |
           cd $GITHUB_WORKSPACE \
-          && mkdir /app \
-          && cp ./backend /app \
-          && cd /app \
+          && mkdir ./app \
+          && cp ./backend ./app \
+          && cd ./app \
           && config set strict-ssl false  \
           && npm install --prod 
 
       - name: copy files
         run: |
           cd $GITHUB_WORKSPACE \
-          && cp /app . \
-          && cp /build/backend/public ./public
+          && cp ./app . \
+          && cp ./build/backend/public ./public
 
       - name: Install yt-dlp, ffmpeg, ffprobe, & twitch downloader
         shell: bash

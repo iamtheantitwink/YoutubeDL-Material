@@ -36,7 +36,7 @@ jobs:
         shell: bash
         run: |
           mkdir ./bin
-          ./docker-utils/fetch-ffmpeg.sh
+          ./docker-utils/ffmpeg-fetch.sh
           ./docker-utils/fetch-twitchdownloader.sh
 
       - name: Zip artifact for deployment
